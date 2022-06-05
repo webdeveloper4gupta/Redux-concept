@@ -68,7 +68,7 @@ const combineReducer=redux.combineReducers({
 const store=createStore(combineReducer,applyMiddleware(logger))
 console.log("intitial state",store.getState())
 // store.subscribe(()=>console.log('updated state',store.getState()));
-store.subscribe(()=>{});
+const unsubscibe=store.subscribe(()=>{});
 store.dispatch(buyCake());
 store.dispatch(buyCake());
 store.dispatch(buyicecream())
