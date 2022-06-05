@@ -1,5 +1,8 @@
 const redux=require('redux');//here i import nodemodule redux
 const createStore=redux.createStore;
+const reduxLogger=require('redux-logger');
+const logger=reduxLogger.createLogger();
+const applyMiddleware=redux.applyMiddleware;
 // action creater'
 const buy_cake='BUY_CAKE';  
 const buy_icecream='BUY_ICECREAM';
@@ -62,9 +65,10 @@ const combineReducer=redux.combineReducers({
     cake:Cakereducer,
     icecream:Icecreamreducer
 });
-const store=createStore(combineReducer)
+const store=createStore(combineReducer,applyMiddleware(logger))
 console.log("intitial state",store.getState())
-store.subscribe(()=>console.log('updated state',store.getState()));
+// store.subscribe(()=>console.log('updated state',store.getState()));
+store.subscribe(()=>{});
 store.dispatch(buyCake());
 store.dispatch(buyCake());
 store.dispatch(buyicecream())

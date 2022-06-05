@@ -9,6 +9,7 @@
   "author": "sukritan gupta",
   "license": "ISC",
   "dependencies": {
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6"
   }
 }
